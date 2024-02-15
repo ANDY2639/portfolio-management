@@ -15,8 +15,9 @@ return new class () extends Migration {
             $table->integer('fees')->default(10);
             $table->float('taxes', 3, 2)->default(0.1);
             $table->foreignId('customer_id')->constrained();
-            $table->softDeletes();
+            $table->string('state')->default('al dia');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

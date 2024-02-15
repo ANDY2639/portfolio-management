@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email')->unique();
             $table->enum('type', ['0', '1', '2'])->default('0'); //0: Natural, 1: Fiscalia, 2: Codeudor
             $table->enum('doc_type', ['CC', 'CE', 'NIT', 'PP'])->default('CC');
             $table->string('dni')->unique();

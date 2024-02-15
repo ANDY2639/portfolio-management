@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('version')->default(0);
             $table->foreignId('loan_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
